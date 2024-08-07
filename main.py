@@ -1,5 +1,5 @@
 from fasthtml.common import *
-from fomantic import *
+from LibreGrid.fomantic import *
 
 hdrs = [
     HighlightJS(
@@ -12,7 +12,7 @@ hdrs = [
     Script(src="https://unpkg.com/htmx.org@2.0.1/dist/htmx.js"),
 ]
 
-app, rt = fast_app(hdrs=fui_hdrs+hdrs)
+app, rt = fast_app(hdrs=fui_hdrs+hdrs, default_hdrs=False)
 
 @rt('/')
 def get():

@@ -16,11 +16,13 @@ fui_hdrs = [
 
 # %% ../nbs/01_fomantic.ipynb 3
 @delegates(Div, keep=True)
-def HeroSegment(title, subtitle, *c, **kwargs) -> FT:
+def HeroSegment(title, subtitle, inverted: bool = True, *c, **kwargs) -> FT:
     return Div(
-        H1(title, cls="ui inverted header"),
-        H2(subtitle),
-        cls="ui inverted vertical masthead center aligned segment", *c, **kwargs)
+        Div(cls="ui text container")(
+            H1(title, cls=f"ui {'inverted ' if inverted else ''}header"),
+            H2(subtitle),
+        ),
+        cls=f"ui {'inverted ' if inverted else ''}vertical masthead center aligned segment", *c, **kwargs)
 
 @delegates(Div, keep=True)
 def Segment(*c, cls="ui segment", **kwargs) -> FT:
@@ -31,13 +33,13 @@ def VerticalStripeSegment(*c, cls="ui vertical stripe segment", **kwargs) -> FT:
     "A Fomantic UI Vertical Stripe Segment, from the homepage example"
     return Div(*c, cls=cls, **kwargs)
 
-# %% ../nbs/01_fomantic.ipynb 4
+# %% ../nbs/01_fomantic.ipynb 7
 @delegates(Div, keep=True)
 def Grid(*c, cls="ui grid container", **kwargs) -> FT:
     "A Fomantic UI Grid"
     return Div(*c, cls=cls, **kwargs)
 
-# %% ../nbs/01_fomantic.ipynb 5
+# %% ../nbs/01_fomantic.ipynb 8
 @delegates(Div, keep=True)
 def Column(*c, cls="column", **kwargs) -> FT:
     "A Fomantic UI Column"
