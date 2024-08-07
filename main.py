@@ -16,8 +16,18 @@ app, rt = fast_app(hdrs=fui_hdrs+hdrs)
 
 @rt('/')
 def get():
-    return HeroSegment(
-        "LibreGrid",
-        "Free and Open Source Community Energy Management System",
-    )
+    return Div(
+        HeroSegment(
+            "LibreGrid",
+            "Power to the people, literally.",
+        ),
+        VerticalStripeSegment(
+            Grid(
+                Div(
+                    H2("Decentralize power, amplify impact."),
+                    P("We are coding the future of energy management, together."),
+                cls="row")
+            ),
+        ),
+        cls="pusher")
 serve()
