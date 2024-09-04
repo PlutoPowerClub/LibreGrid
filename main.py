@@ -3,9 +3,10 @@ from fasthtml.common import *
 import argparse
 import subprocess
 
+
 parser = argparse.ArgumentParser(
-    prog="Fast HTML + Tailwind template",
-    description="FastHTML template using Tailwind CSS for styling",
+    prog="Libre Grid",
+    description="Energy management software for communities",
 )
 parser.add_argument(
     "--tailwind",
@@ -35,13 +36,14 @@ hdrs = [
 
 app, rt = fast_app(
     pico=False,
-    hdrs=fui_hdrs+hdrs,
+    hdrs=hdrs,
     default_hdrs=False)
 
 @rt('/')
 def get():
     return Div(
         "Hello!", cls="font-bold text-red text-5xl")
+
 
 if args.tailwind:
     subprocess.run(
