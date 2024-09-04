@@ -35,7 +35,6 @@ hdrs = [
 ]
 
 app, rt = fast_app(
-    pico=False,
     hdrs=hdrs,
     default_hdrs=False)
 
