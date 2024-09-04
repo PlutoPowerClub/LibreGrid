@@ -152,3 +152,5 @@ checklink/cookies.txt
 .sesskey
 
 /claude_inputs
+
+/node_modules
