@@ -1,0 +1,2 @@
+- Keep building in fasttags[this](https://franken-ui.dev/examples/authentication) - being built in login.py screen and import into main.py, show as separate route /login etc.
+- use html to fasttag thing.
