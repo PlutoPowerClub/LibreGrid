@@ -16,12 +16,10 @@ fui_hdrs = [
 
 # %% ../nbs/01_fomantic.ipynb 3
 @delegates(Div, keep=True)
-def HeroSegment(title, subtitle, inverted: bool = True, *c, **kwargs) -> FT:
+def HeroSegment(title, subtitle, inverted=True, *c, **kwargs) -> FT:
     return Div(
-        Div(cls="ui text container")(
-            H1(title, cls=f"ui {'inverted ' if inverted else ''}header"),
-            H2(subtitle),
-        ),
+        H1(title, cls="ui inverted header"),
+        H2(subtitle),
         cls=f"ui {'inverted ' if inverted else ''}vertical masthead center aligned segment", *c, **kwargs)
 
 @delegates(Div, keep=True)
